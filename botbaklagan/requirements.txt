@@ -1,3 +1,0 @@
-pytelegrambotapi
-requests
-bs4
