@@ -7,7 +7,7 @@
 > 3. Напишите следующую команду: pip install ... (где ... - ваша библиотека)
 > Например: pip install telebot
 ## Книга для Python:
-> Например: pip install telebot
+> 
 ## Маинкрафт:
 > [tlauncher](https://tlauncher.org/) - для обычной игры
 > [Minecraft_Tools](https://www.mann-ivanov-ferber.ru/books/programmiruem-s-minecraft/) - сервер, чтобы работал код из geany
