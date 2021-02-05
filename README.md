@@ -11,7 +11,7 @@
 > 3. Напишите следующую команду: pip install ... (где ... - ваша библиотека)
 > Например: pip install telebot
 ## Шпаргалка:
-> файл [note.py](https://github.com/pylinx64/sun_python_12/blob/main/sun_python_12/note.py)
+> файл [note.py](https://github.com/pylinx64/mon_python_16/blob/main/mon_python_16/note.py)
 ## Маинкрафт:
 > [tlauncher](https://tlauncher.org/) - для обычной игры
 > [Minecraft_Tools](https://www.mann-ivanov-ferber.ru/books/programmiruem-s-minecraft/) - сервер, чтобы работал код из geany
