@@ -3,6 +3,11 @@ import time
 from tkinter import Tk, Entry, Label
 from pyautogui import click, moveTo
 
+def stopLocker(event):
+	global stop, entry
+	if entry.get() == 'h':
+		stop = False
+
 # Создаем окно
 root = Tk()
 
@@ -33,11 +38,4 @@ while stop == True:
 	click(x=x/2-150, y=y/2+20)
 	
 	# Добавляем сочетание клавиш, которые будут закрывать программу
-    root.bind('<Control-KeyPress-c>', stopLocker)
-	
-	if entry.get() == 'hacker':
-		stop = False
-
-time.sleep(100)
-
-
+	root.bind('<Return>', stopLocker)
