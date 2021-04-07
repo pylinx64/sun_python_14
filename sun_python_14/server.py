@@ -1,11 +1,9 @@
 import socket
 from datetime import datetime
-
 import colorama
 
 from colorama import Fore
 colorama.init()
-
 
 clients = []
 
@@ -16,22 +14,29 @@ quit = False
 print("[Server Started]")
 
 while not quit:
-	try:
-		data, addr = s.recvfrom(1024)
+    try:
+        data, addr = s.recvfrom(1024)
+        '''
+        if "192.168.1.103" == addr[0]:
+            s.sendto('BAN'.encode("utf-8"), addr)
+            continue
+        '''
 
-		if addr not in clients:
-			clients.append(addr)
+        if addr not in clients:
+            clients.append(addr)
+            
+        
+        server_time = datetime.strftime(datetime.now(), "%Y-%m-%d-%H.%M.%S")
 
-		server_time = datetime.strftime(datetime.now(), "%Y-%m-%d-%H.%M.%S")
+        print("["+addr[0]+"]=["+str(addr[1])+"]=["+server_time+"]/",end="")
+        print(data.decode("utf-8"))
 
-		print("["+addr[0]+"]=["+str(addr[1])+"]=["+server_time+"]/",end="")
-		print(data.decode("utf-8"))
-
-		for client in clients:
-			if addr != client:
-				s.sendto(data,client)
-	except:
-		print("\n[Server Stopped]")
-		quit = True
+        for client in clients:
+            s.sendto(data,client)
+    except:
+        for client in clients:
+            s.sendto('Server Stop'.encode("utf-8"), client)
+        print("\n[Server Stopped]")
+        quit = True
 
 s.close()

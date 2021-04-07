@@ -33,8 +33,8 @@ s = socket.socket(socket.AF_INET, socket.SOCK_DGRAM)
 s.bind((host, port))
 s.setblocking(0)
 
-name = input('name -> ')
-name = Fore.CYAN + name + Fore.RESET
+#name = input('name -> ')
+name = Fore.CYAN + 'A' + Fore.GREEN + 'L' + Fore.YELLOW + 'E' + Fore.RESET
 # отправляет сообщение на сервер
 s.sendto(("["+name+"] => join chat ").encode("utf-8"), server)
 
